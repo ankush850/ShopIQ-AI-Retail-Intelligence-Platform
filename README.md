@@ -1,0 +1,1 @@
+# ShopIQ-AI-Retail-Intelligence-Platform-Praxis-2.0-Hackathon
