@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next"
 import { Inter, JetBrains_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
+import { ErrorBoundary } from "@/components/error-boundary"
 import { Toaster } from "sonner"
 import "./globals.css"
 
@@ -12,6 +13,10 @@ export const metadata: Metadata = {
   title: "ShopIQ - Intelligent Shopping Analytics",
   description:
     "AI-powered analytics platform for shopping data analysis, ML forecasting, and intelligent insights.",
+  icons: {
+    icon: '/icon.svg',
+    apple: '/apple-icon.png',
+  },
 }
 
 export const viewport: Viewport = {
@@ -31,15 +36,17 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetbrains.variable} font-sans antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-          <Toaster richColors position="top-right" />
-        </ThemeProvider>
+        <ErrorBoundary>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+            <Toaster richColors position="top-right" />
+          </ThemeProvider>
+        </ErrorBoundary>
         <Analytics />
       </body>
     </html>
