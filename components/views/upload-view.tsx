@@ -16,8 +16,11 @@ import {
   ArrowRight,
   Sparkles,
   Trash2,
+  Info,
+  HelpCircle,
 } from "lucide-react"
 import { toast } from "sonner"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import {
   parseCSV,
   validateData,
@@ -62,6 +65,7 @@ export function UploadView() {
   const [isProcessing, setIsProcessing] = useState(false)
   const [progress, setProgress] = useState(0)
   const [isDragOver, setIsDragOver] = useState(false)
+  const [showInstructions, setShowInstructions] = useState(false)
 
   const stepIndex = STEPS.findIndex((s) => s.key === currentStep)
 
@@ -241,8 +245,115 @@ export function UploadView() {
 
       {/* Step 1: Upload */}
       {currentStep === "upload" && (
-        <Card className="transition-all duration-300 hover:shadow-md dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.05)]">
-          <CardContent className="p-8">
+        <div className="space-y-4">
+          <div className="flex items-center justify-between">
+            <h2 className="text-lg font-semibold">Upload Your Data</h2>
+            <Dialog open={showInstructions} onOpenChange={setShowInstructions}>
+              <DialogTrigger asChild>
+                <Button variant="outline" size="sm" className="gap-2">
+                  <HelpCircle className="h-4 w-4" />
+                  CSV Instructions
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
+                <DialogHeader>
+                  <DialogTitle className="flex items-center gap-2">
+                    <Info className="h-5 w-5 text-primary" />
+                    CSV File Requirements
+                  </DialogTitle>
+                </DialogHeader>
+                <div className="space-y-6 mt-4">
+                  <div className="rounded-lg bg-primary/5 border border-primary/20 p-4">
+                    <h4 className="font-semibold mb-3 flex items-center gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-primary" />
+                      Required Columns
+                    </h4>
+                    <div className="space-y-3 text-sm">
+                      <div className="grid grid-cols-[120px_1fr] gap-2">
+                        <span className="font-medium text-primary">Category:</span>
+                        <span className="text-muted-foreground">category, product_category, item_category, type, product_type</span>
+                      </div>
+                      <div className="grid grid-cols-[120px_1fr] gap-2">
+                        <span className="font-medium text-primary">Purchase Amount:</span>
+                        <span className="text-muted-foreground">purchase amount, purchase_amount, amount, price, total, revenue, sales</span>
+                      </div>
+                      <div className="grid grid-cols-[120px_1fr] gap-2">
+                        <span className="font-medium text-primary">Date:</span>
+                        <span className="text-muted-foreground">date, purchase_date, order_date, transaction_date, created_at</span>
+                      </div>
+                      <div className="grid grid-cols-[120px_1fr] gap-2">
+                        <span className="font-medium text-primary">Customer ID (Optional):</span>
+                        <span className="text-muted-foreground">customer, customer_id, customer id, client_id, cust_id</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold mb-2">File Requirements</h4>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li className="flex items-start gap-2">
+                        <span className="text-primary mt-1">•</span>
+                        <span>Maximum file size: <strong>10MB</strong></span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-primary mt-1">•</span>
+                        <span>Format: <strong>CSV only</strong> (.csv extension)</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-primary mt-1">•</span>
+                        <span>Minimum recommended rows: <strong>20-30 rows</strong></span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-primary mt-1">•</span>
+                        <span>For best forecasts: <strong>3-6 months</strong> of historical data</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold mb-2">Example CSV Format</h4>
+                    <div className="rounded-lg bg-muted border border-border overflow-hidden">
+                      <pre className="text-xs p-4 overflow-x-auto text-muted-foreground">
+{`date,category,purchase_amount,customer_id
+2024-01-15,Electronics,299.99,CUST001
+2024-01-16,Clothing,89.50,CUST002
+2024-01-17,Electronics,549.00,CUST001
+2024-01-18,Home & Garden,125.75,CUST003`}
+                      </pre>
+                    </div>
+                  </div>
+
+                  <div className="rounded-lg bg-blue-500/10 border border-blue-500/20 p-4">
+                    <h4 className="font-semibold mb-2 text-blue-500 flex items-center gap-2">
+                      <Sparkles className="h-4 w-4" />
+                      Tips for Best Results
+                    </h4>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li className="flex items-start gap-2">
+                        <span className="text-blue-500 mt-1">✓</span>
+                        <span>Use consistent category names (avoid typos)</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-blue-500 mt-1">✓</span>
+                        <span>Ensure dates are in a recognizable format</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-blue-500 mt-1">✓</span>
+                        <span>More data = better forecasts (100+ rows ideal)</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-blue-500 mt-1">✓</span>
+                        <span>Purchase amounts must be numeric values</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
+          </div>
+
+          <Card className="transition-all duration-300 hover:shadow-md dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.05)]">
+            <CardContent className="p-8">
             <div
               onDragOver={(e) => {
                 e.preventDefault()
@@ -285,6 +396,7 @@ export function UploadView() {
             </div>
           </CardContent>
         </Card>
+      </div>
       )}
 
       {/* Step 2: Validation */}
@@ -564,5 +676,3 @@ function StatCard({
     </div>
   )
 }
-
-
