@@ -1,21 +1,45 @@
 # ShopIQ-AI-Retail-Intelligence-Platform
 
-![Next.js](https://img.shields.io/badge/Next.js-16.1.6-000000?style=for-the-badge&logo=next.js&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.7.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![React](https://img.shields.io/badge/React-19.2.4-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Tailwind_CSS](https://img.shields.io/badge/Tailwind_CSS-4.2.0-38BDF8?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Analytics](https://img.shields.io/badge/Analytics-Behavior-3B82F6?style=for-the-badge)
-![ML](https://img.shields.io/badge/ML-Affinity-8B5CF6?style=for-the-badge)
-![Data_Pipeline](https://img.shields.io/badge/Data-Pipeline-F59E0B?style=for-the-badge)
-
+![Next.js](https://img.shields.io/badge/Next.js-16.1.6-000000?style=flat&logo=next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.7.3-3178C6?style=flat&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-19.2.4-61DAFB?style=flat&logo=react&logoColor=black)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.2.0-38BDF8?style=flat&logo=tailwind-css&logoColor=white)
+![Analytics](https://img.shields.io/badge/Analytics-Behavior-3B82F6?style=flat)
+![ML](https://img.shields.io/badge/ML-Affinity-8B5CF6?style=flat)
+![Data Pipeline](https://img.shields.io/badge/Data-Pipeline-F59E0B?style=flat)
 
 **Production-Ready Retail Analytics Platform** with AI-powered insights, forecasting, and shopper behavior analysis.
+---
 
-✨ **Recently Updated:** Enhanced responsive design, error handling, and production deployment configuration.
+## Promblem Statement 
 
+E-commerce | Consumer Analytics | Personalization
 
+### Context
+Online shoppers exhibit complex behavior influenced by preferences, values, timing, and pricing. Understanding why customers behave the way they do is essential for merchandising and marketing teams.
 
-A comprehensive data analytics platform with forecasting, shopper behavior analysis, and interactive visualizations built with Next.js and TypeScript.
+### Problem
+Design a shopper behavior analysis and segmentation framework that reveals purchasing affinities and explains how different customer groups interact with products.
+
+### What the Solution Should Enable
+- Identification of behavioral or preference-based segments  
+- Analysis of product-category attraction per segment  
+- Interpretation of textual feedback and sentiment  
+- Insights usable by merchandising and marketing teams  
+
+### Open Design Space
+Teams may include:
+- Persona classification or discovery  
+- NLP-based review analysis  
+- Cross-category and cross-segment insights  
+- Recommendation logic grounded in behavior  
+
+### Evaluation Focus
+- Depth of behavioral insight  
+- Relevance to real merchandising decisions  
+- Quality of explanations, not just predictions  
+
+---
 
 ## Features
 
