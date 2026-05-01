@@ -1,15 +1,21 @@
-# ShopIQ-AI-Retail-Intelligence-Platform
+### ShopIQ-AI-Retail-Intelligence-Platform
+<p align="center">
+  <img src="https://github.com/ankush850/ShopIQ-AI-Retail-Intelligence-Platform/blob/2826a22660f0cf9c1475666c586475ff6aaa996b/Shop-IQ.png" width="200"/>
+</p>
 
-![Next.js](https://img.shields.io/badge/Next.js-16.1.6-000000?style=flat&logo=next.js&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.7.3-3178C6?style=flat&logo=typescript&logoColor=white)
-![React](https://img.shields.io/badge/React-19.2.4-61DAFB?style=flat&logo=react&logoColor=black)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.2.0-38BDF8?style=flat&logo=tailwind-css&logoColor=white)
-![Analytics](https://img.shields.io/badge/Analytics-Behavior-3B82F6?style=flat)
-![ML](https://img.shields.io/badge/ML-Affinity-8B5CF6?style=flat)
-![Data Pipeline](https://img.shields.io/badge/Data-Pipeline-F59E0B?style=flat)
+<p align="center">
+  <b>Production-grade platform for shopper behavior analysis, demand forecasting, and real-time retail insights.</b>
+</p>
 
-**Production-Ready Retail Analytics Platform** with AI-powered insights, forecasting, and shopper behavior analysis.
----
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-16.1.6-000000?style=flat&logo=next.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TypeScript-5.7.3-3178C6?style=flat&logo=typescript&logoColor=white"/>
+  <img src="https://img.shields.io/badge/React-19.2.4-61DAFB?style=flat&logo=react&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Tailwind_CSS-4.2.0-38BDF8?style=flat&logo=tailwind-css&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Analytics-Behavior-3B82F6?style=flat"/>
+  <img src="https://img.shields.io/badge/ML-Affinity-8B5CF6?style=flat"/>
+  <img src="https://img.shields.io/badge/Data-Pipeline-F59E0B?style=flat"/>
+</p>
 
 ## Promblem Statement 
 
